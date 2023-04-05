@@ -4,7 +4,7 @@ function validaor(request, response, next){
   if(request.query.name){
     next();
   } else {
-    next('Error: Give me a NAME!');
+    next('Error at validator!');
   }
   
 }
