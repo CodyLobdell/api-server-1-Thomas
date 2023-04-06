@@ -12,7 +12,7 @@ const  { sequelize, DataTypes } = require('./model');
 // provide your connection string
 // const sequelize = new Sequelize(SQL_URL);
 
-// defines a table
+//defines movie table
 const movies_model = sequelize.define('Movies', {
   // each of these is a column in the table
   title: {
@@ -28,7 +28,7 @@ const movies_model = sequelize.define('Movies', {
     allowNull: false,
   },
 });
-
+//exporting database and model
 module.exports = {
   sequelize,
   movies_model,

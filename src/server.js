@@ -1,5 +1,5 @@
 'use strict';
-
+//import cors errror handler express router
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -10,7 +10,7 @@ const error500 = require('./error-handlers/500');
 const movies_route = require('../routes/movies_route');
 const boxoffice_route = require('../routes/boxoffice_route');
 
-
+//use express and cors
 app.use(cors());
 app.use(express.json());
 
@@ -19,13 +19,10 @@ app.use(express.json());
 
 
 app.use(logger);
-
+//route for movie and box office
 app.use('/movies', movies_route);
 app.use('/boxoffice',boxoffice_route);
-// app.get('/person', validaor, (request, response, next) => {
-//   data.name=request.query.name;
-//   response.status(200).json(data);
-// });
+
 
 app.use('*', error404);
 app.use(error500);

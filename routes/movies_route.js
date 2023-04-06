@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const { movies_model } = require('../models/movies_model');
-
+// applying CRUD and functions for route
 router.get('/', getMovies);
 router.get('/:id', getAMovie);
 router.post('/', postAMovie);
@@ -12,7 +12,7 @@ router.delete('/:id', deleteAMovie);
 
 // const data = [];
 
-// what is expected of the person router??
+//all funcitons for movie. confirming status
 async function getMovies(request, response, next) {
   let movies = await movies_model.findAll();
   response.status(200).json(movies);

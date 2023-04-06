@@ -3,13 +3,13 @@
 const express = require('express');
 const router = express.Router();
 const { boxoffice_model } = require('../models/boxoffice_model');
-
+// applying CRUD and functions for route
 router.get('/', getboxoffice);
 router.get('/:id', getAboxoffice);
 router.post('/', postAboxoffice);
 router.put('/:id', putAboxoffice);
 router.delete('/:id', deleteAboxoffice);
-
+//all funcitons for box office. confirming status
 async function getboxoffice(request, response, next) {
   let boxoffice = await boxoffice_model.findAll();
   response.status(200).json(boxoffice);

@@ -3,7 +3,7 @@
 const server = require('../src/server');
 const supertest = require('supertest');
 const request = supertest(server.app);
-
+//npm testing bad route
 describe('Testing the express server', () => {
 
   test('404 on a bad route', async () => {
@@ -11,13 +11,13 @@ describe('Testing the express server', () => {
     expect(response.status).toEqual(404);
     // expect(response.body).toEqual({});
   });
-
+//npm testing bad method
   test('404 on a bad method', async () => {
     const response = await request.patch('/movies');
     expect(response.status).toEqual(404);
     // expect(response.body).toEqual({});
   });
-
+//POST test to create record
   test('Create a record using POST', async () => {
     const response = await request.post('/movies').send({
       title: "s",
