@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.use(logger);
 
-app.use('/movies',movies_route);
+app.use('/movies', movies_route);
 app.use('/boxoffice',boxoffice_route);
 // app.get('/person', validaor, (request, response, next) => {
 //   data.name=request.query.name;

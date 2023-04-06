@@ -9,4 +9,4 @@ const SQL_URL = process.env.SQL_URL || 'sqlite:memory:';
 // provide your connection string
 const sequelize = new Sequelize(SQL_URL);
 
-module.exports = {sequelize, DataTypes};
+module.exports = { sequelize, DataTypes };

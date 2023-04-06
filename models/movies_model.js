@@ -1,7 +1,9 @@
 'use strict';
 
 
-const  {sequelize, DataTypes} = require('./model');
+const  { sequelize, DataTypes } = require('./model');
+// const { DataTypes } = require('sequelize');
+
 
 // require('dotenv').config();
 // const { Sequelize, DataTypes } = require('sequelize');

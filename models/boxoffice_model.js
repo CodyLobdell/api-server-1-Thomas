@@ -1,7 +1,7 @@
 'use strict';
 
-const  {sequelize, DataTypes} = require('./model');
-
+const  { sequelize, DataTypes } = require('./model');
+// const { DataTypes } = require('sequelize');
 
 // defines a table
 const boxoffice_model = sequelize.define('Boxoffice', {
