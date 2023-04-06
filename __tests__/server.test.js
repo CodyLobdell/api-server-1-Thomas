@@ -13,26 +13,42 @@ describe('Testing the express server', () => {
   });
 
   test('404 on a bad method', async () => {
-    const response = await request.post('/person');
+    const response = await request.patch('/movies');
     expect(response.status).toEqual(404);
     // expect(response.body).toEqual({});
   });
 
-  test('500 if no name in the query string', async () => {
-    const response = await request.get('/person');
-    expect(response.status).toEqual(500);
-    // expect(response.body).toEqual({});
+  test('Create a record using POST', async () => {
+    const response = await request.post('/movies').send({
+      title: "s",
+      year: 546,
+      runtime: 654,
+    });
+    expect(response.status).toEqual(200);
   });
-  test('200 if the name is in the query string', async () => {
-    const response = await request.get('/person?name=d');
+
+  test('Read a list of records using GET', async () => {
+    const response = await request.get('/movies');
     expect(response.status).toEqual(200);
     // expect(response.body).toEqual({});
   });
 
-  test('given an name in the query string, the output object is correct', async () => {
-    const response = await request.get('/person?name=a');
+  test('Read a record using GET', async () => {
+    const response = await request.get('/movies/1');
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual({"name": "a"});
+    expect(response.body.id).toEqual(1);
+  });
+
+  test('Update a record using PUT', async () => {
+    const response = await request.put('/movies/1');
+    expect(response.status).toEqual(200);
+    expect(response.body).toEqual({ "id": "1" });
+  });
+
+  test('Destroy a record using DELETE', async () => {
+    const response = await request.delete('/movies/3');
+    expect(response.status).toEqual(200);
+    expect(response.body).toEqual({});
   });
 
 });
