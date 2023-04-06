@@ -130,6 +130,35 @@ REMINDER: Your app needs a new dependency today: **sequelize**
 
 Your server must be deployed to the cloud. Please note the deployed URL in your README!
 
-## Assignment Submission Instructions
+[Live page](https://basic-api-74bg.onrender.com)
 
-Refer to the the [Submitting Express Server Lab Submission Instructions](../../../reference/submission-instructions/labs/express-servers.md) for the complete lab submission process and expectations
+/movies
+```
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  year: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  runtime: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  }
+```
+
+/boxoffice
+```
+{boxoffice: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  ticket: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  }}
+```
+## UML
+
+![UML](lab3.jpg)
